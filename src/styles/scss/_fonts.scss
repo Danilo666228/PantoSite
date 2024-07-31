@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Please do not use this import in production. You could download this font from here https://fontstorage.com/font/inter */
+@import 'https://fonts.fontstorage.com/import/inter.css';
+/*
+	Inter, 1, 100, 200, 300, 400, 500, 600, 700, 800, 900
+*/

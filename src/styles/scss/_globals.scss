@@ -1,0 +1,13 @@
+body {
+	font-family: $font-family-Gilroy;
+	color: $color-black;
+	font-weight: normal;
+}
+a,
+button,
+input {
+	text-decoration: none;
+	color: inherit;
+	border: none;
+	outline: none;
+}

@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+@import 'https://fonts.fontstorage.com/import/inter.css';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева
+   всем тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и другим нужным тегам,
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам
+  */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+/**
+   Убираем стандартный маркер
+   у маркированных списков
+  */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+   Упрощаем работу с изображениями
+  */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+  height: 100%;
+  /**
+      Плавный скролл
+     */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+  min-height: 100%;
+  /**
+      Унифицированный интерлиньяж
+     */
+  line-height: 1.5;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/src/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/src/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/src/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Please do not use this import in production. You could download this font from here https://fontstorage.com/font/inter */
+/*
+	Inter, 1, 100, 200, 300, 400, 500, 600, 700, 800, 900
+*/
+body {
+  font-family: "Gilroy", sans-serif;
+  color: #1e1e1e;
+  font-weight: normal;
+}
+
+a,
+button,
+input {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+.header {
+  position: relative;
+  background: url(/src/img/header/background.jpg) no-repeat;
+  background-size: cover;
+  aspect-ratio: 1440/1084;
+  color: #ffffff;
+  padding-top: 30px;
+  padding-inline: 80px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.28px;
+}
+.header__menu {
+  font-size: 18px;
+  font-weight: normal;
+}
+.header__menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 62px;
+}
+.header__action-basket {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header__action-basket__count {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  left: 87%;
+  top: -9%;
+  background-color: #e58411;
+  border-radius: 50%;
+  height: 19px;
+  width: 19px;
+}
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 86px;
+  text-align: center;
+}
+.header__content-title {
+  font-size: 80px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  width: 861px;
+  font-size: 80px;
+}
+.header__content-description {
+  margin-top: 14px;
+  width: 606px;
+  font-size: 24px;
+  line-height: 160%;
+  opacity: 70%;
+}
+.header__search-form {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-inline: 10px 5px;
+  width: 344px;
+  height: 56px;
+  border: 1px solid #7c7c7c;
+  border-radius: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  gap: 5px;
+}
+.header__search-form__input {
+  color: #ffffff;
+  width: 300px;
+  font-weight: 600;
+  height: 40px;
+  font-size: 18px;
+  background: transparent;
+}
+.header__search-form__input::-moz-placeholder {
+  font-weight: normal;
+  color: #7c7c7c;
+}
+.header__search-form__input::placeholder {
+  font-weight: normal;
+  color: #7c7c7c;
+}
+.header__search-form__button {
+  aspect-ratio: 1;
+  background-color: #e58411;
+  border-radius: 50%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-dot {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.info-dot__radius {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  border-radius: 50%;
+  left: -47%;
+  top: -47%;
+  opacity: 50%;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+.info-dot-divan {
+  position: absolute;
+  left: 19.0972222222%;
+  top: 69.4444444444%;
+}
+.info-dot-vaza {
+  position: absolute;
+  left: 8.3333333333%;
+  top: 68.75%;
+}/*# sourceMappingURL=index.css.map */

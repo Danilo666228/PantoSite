@@ -1,0 +1,33 @@
+.info-dot {
+	position: relative;
+	width: 11px;
+	height: 11px;
+	background-color: $color-white;
+	border-radius: 50%;
+	cursor: pointer;
+	&__circle {
+	}
+	&__radius {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+		border-radius: 50%;
+		left: -47%;
+		top: -47%;
+		opacity: 50%;
+		backdrop-filter: blur(8px);
+		background: rgba(255, 255, 255, 0.15);
+	}
+
+	&-divan {
+		position: absolute;
+		left: calc((275px * 100%) / 1440px);
+		top: calc((1000px * 100%) / 1440px);
+	}
+	&-vaza {
+		position: absolute;
+		left: calc((120px * 100%) / 1440px);
+		top: calc((990px * 100%) / 1440px);
+	}
+}
